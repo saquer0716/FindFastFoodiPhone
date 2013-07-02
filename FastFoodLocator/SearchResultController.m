@@ -15,6 +15,7 @@
 #import "Restaurant.h"
 #import "MapSearchController.h"
 #import "SearchResultHeaderView.h"
+#import "SVProgressHUD.h"
 #import "ApiKey.h"
 
 @interface SearchResultController ()
@@ -22,7 +23,7 @@
     int selectedMap; 
     int travelType;
     
-    UIAlertView *loadingDialog;
+//    UIAlertView *loadingDialog;
     
     CLLocationManager *locationManager;
     CLGeocoder *geocoder;
@@ -73,8 +74,6 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    [self configAlertDialog];
-    
     if ([self checkLocationService]) {
         [locationManager startUpdatingLocation];
     }
@@ -83,30 +82,32 @@
 - (BOOL)checkLocationService
 {
     if (![CLLocationManager locationServicesEnabled]) {
-        if ([loadingDialog isVisible]) {
-            [loadingDialog dismissWithClickedButtonIndex:0 animated:NO];
+        if ([SVProgressHUD isVisible]) {
+            [SVProgressHUD dismiss];
         }
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Location service not enabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         
         return NO;
     }
+    
+    [SVProgressHUD showWithStatus:@"Getting current location..." maskType:SVProgressHUDMaskTypeBlack];
     return YES;
 }
 
-- (void)configAlertDialog
-{
-    loadingDialog = [[UIAlertView alloc] initWithTitle:@"Getting current location..." message:@"" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
-    [loadingDialog show];
-    
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    
-    spinner.center = CGPointMake(loadingDialog.bounds.size.width / 2, loadingDialog.bounds.size.height - 50);
-    
-    [loadingDialog addSubview:spinner];
-    [spinner startAnimating];
-    loadingDialog.opaque = NO;
-}
+//- (void)configAlertDialog
+//{
+//    loadingDialog = [[UIAlertView alloc] initWithTitle:@"Getting current location..." message:@"" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+//    [loadingDialog show];
+//    
+//    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+//    
+//    spinner.center = CGPointMake(loadingDialog.bounds.size.width / 2, loadingDialog.bounds.size.height - 50);
+//    
+//    [loadingDialog addSubview:spinner];
+//    [spinner startAnimating];
+//    loadingDialog.opaque = NO;
+//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -119,16 +120,14 @@
 {
     if ([self checkLocationService]) {
         currentLocation = nil;
-        [loadingDialog show];
-        [loadingDialog setTitle:@"Getting current location..."];
+        [SVProgressHUD showWithStatus:@"Getting current location..." maskType:SVProgressHUDMaskTypeBlack];
         [locationManager startUpdatingLocation];
     }
 }
 
 - (void)searchForNearbyRestaurant
 {
-    loadingDialog.title = @"Searching nearby resaurant...";
-    [loadingDialog show];
+    [SVProgressHUD showWithStatus:@"Searching nearby resaurant..." maskType:SVProgressHUDMaskTypeBlack];
     
     [mapSearchController searchFor:_selectedRestaurant fromLocation:currentLocation.coordinate travelBy:travelType onComplete:^(NSError *error, int resultCode) {
         if (error) {
@@ -151,7 +150,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             //dismiss with result == 0 situation
-            [loadingDialog dismissWithClickedButtonIndex:0 animated:YES];
+            [SVProgressHUD dismiss];
             [_resultTableView reloadData];
         });
     }];
@@ -234,8 +233,8 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     [locationManager stopUpdatingLocation];
-    if ([loadingDialog isVisible]) {
-        [loadingDialog dismissWithClickedButtonIndex:0 animated:YES];
+    if ([SVProgressHUD isVisible]) {
+        [SVProgressHUD dismiss];
     }
     [_resultTableViewHeader changeLocationVicinity:@"Location unavailable"];
     
@@ -272,7 +271,7 @@
             
         }else {
             NSLog(@"%@", error.debugDescription);
-            [loadingDialog dismissWithClickedButtonIndex:0 animated:YES];
+            [SVProgressHUD dismiss];
             [_resultTableViewHeader changeLocationVicinity:@"Location unavailable"];
         }
     }];

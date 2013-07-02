@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) IASKAppSettingsViewController *settingsViewController;
 - (IBAction)settings:(id)sender;
+- (IBAction)share:(id)sender;
 
 @end

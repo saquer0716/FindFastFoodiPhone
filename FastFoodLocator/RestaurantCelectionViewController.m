@@ -86,4 +86,7 @@
     _settingsViewController.showCreditsFooter = YES;
     [self.navigationController pushViewController:_settingsViewController animated:YES];
 }
+
+- (IBAction)share:(id)sender {
+}
 @end

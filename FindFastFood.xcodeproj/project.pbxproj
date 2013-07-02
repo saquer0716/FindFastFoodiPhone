@@ -73,6 +73,8 @@
 		3B9A9E741766B3F7002EFEBB /* MapSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A9E731766B3F7002EFEBB /* MapSearchController.m */; };
 		3B9A9E771766E82D002EFEBB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A9E761766E82D002EFEBB /* MapViewController.m */; };
 		3B9A9E7A176AB406002EFEBB /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A9E79176AB406002EFEBB /* CustomPointAnnotation.m */; };
+		3B9AB3791782A9DA008FED40 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B9AB3761782A9DA008FED40 /* SVProgressHUD.bundle */; };
+		3B9AB37A1782A9DA008FED40 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9AB3781782A9DA008FED40 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +179,9 @@
 		3B9A9E761766E82D002EFEBB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		3B9A9E78176AB406002EFEBB /* CustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointAnnotation.h; sourceTree = "<group>"; };
 		3B9A9E79176AB406002EFEBB /* CustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointAnnotation.m; sourceTree = "<group>"; };
+		3B9AB3761782A9DA008FED40 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		3B9AB3771782A9DA008FED40 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		3B9AB3781782A9DA008FED40 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				3B48F577176553E100D8F9FA /* InAppSettings.bundle */,
+				3B9AB3751782A9DA008FED40 /* SVProgressHUD */,
 				3B48F58217655F7D00D8F9FA /* InAppSettingsKit */,
 				3B64F4BF1755799C001D3105 /* FindFastFood */,
 				3B64F4B81755799C001D3105 /* Frameworks */,
@@ -428,6 +434,16 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		3B9AB3751782A9DA008FED40 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				3B9AB3761782A9DA008FED40 /* SVProgressHUD.bundle */,
+				3B9AB3771782A9DA008FED40 /* SVProgressHUD.h */,
+				3B9AB3781782A9DA008FED40 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,6 +512,7 @@
 				3B48F5761761AF2000D8F9FA /* indicator@2x.png in Resources */,
 				3B48F578176553E200D8F9FA /* InAppSettings.bundle in Resources */,
 				3B733DA81771510800EC1F88 /* GoogleMaps.bundle in Resources */,
+				3B9AB3791782A9DA008FED40 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +554,7 @@
 				3B9A9E741766B3F7002EFEBB /* MapSearchController.m in Sources */,
 				3B9A9E771766E82D002EFEBB /* MapViewController.m in Sources */,
 				3B9A9E7A176AB406002EFEBB /* CustomPointAnnotation.m in Sources */,
+				3B9AB37A1782A9DA008FED40 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,3 +21,4 @@ GoogleMaps.bundle
 googleMaps.framework/
 InAppSettings.bundle
 InAppSettingsKit
+SVProgressHUD/

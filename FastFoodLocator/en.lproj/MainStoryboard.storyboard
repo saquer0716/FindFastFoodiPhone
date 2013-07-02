@@ -48,9 +48,14 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Restaurant" id="qZB-rJ-XuM">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="oeu-db-rht">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="oeu-db-rht">
                             <connections>
                                 <action selector="settings:" destination="cab-5b-Ge7" id="t3i-8J-ZHp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="rBS-Wz-UdD">
+                            <connections>
+                                <action selector="share:" destination="cab-5b-Ge7" id="VIe-IR-aum"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
