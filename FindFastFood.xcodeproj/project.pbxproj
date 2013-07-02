@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B47311417558CAC007A52D2 /* SearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B47311317558CAC007A52D2 /* SearchResultController.m */; };
+		3B47311817559226007A52D2 /* RestaurantData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B47311717559226007A52D2 /* RestaurantData.m */; };
+		3B47311E17559542007A52D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B47311C1755951B007A52D2 /* CoreLocation.framework */; };
+		3B47312117559841007A52D2 /* RestaurantDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B47312017559840007A52D2 /* RestaurantDataController.m */; };
+		3B473127175732E9007A52D2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B473126175732E9007A52D2 /* Constants.m */; };
+		3B47312F175737A2007A52D2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B47312E175737A2007A52D2 /* CoreText.framework */; };
+		3B473131175737B2007A52D2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B473130175737B2007A52D2 /* AVFoundation.framework */; };
+		3B473133175737BA007A52D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B473132175737BA007A52D2 /* GLKit.framework */; };
+		3B473135175737D5007A52D2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B473134175737D5007A52D2 /* ImageIO.framework */; };
+		3B473137175737E0007A52D2 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B473136175737E0007A52D2 /* libc++.dylib */; };
+		3B473139175737FB007A52D2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B473138175737FB007A52D2 /* libz.dylib */; };
+		3B47313B1757380E007A52D2 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B47313A1757380E007A52D2 /* libicucore.dylib */; };
+		3B47313D17573816007A52D2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B47313C17573816007A52D2 /* OpenGLES.framework */; };
+		3B47313F17573828007A52D2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B47313E17573828007A52D2 /* QuartzCore.framework */; };
+		3B47314117573830007A52D2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B47314017573830007A52D2 /* SystemConfiguration.framework */; };
+		3B4731421757385E007A52D2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B47312C17573797007A52D2 /* CoreData.framework */; };
+		3B47314517582546007A52D2 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B47314417582546007A52D2 /* Restaurant.m */; };
+		3B48F5761761AF2000D8F9FA /* indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B48F5751761AF2000D8F9FA /* indicator@2x.png */; };
+		3B48F578176553E200D8F9FA /* InAppSettings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B48F577176553E100D8F9FA /* InAppSettings.bundle */; };
+		3B48F5A317655F7D00D8F9FA /* IASKAppSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F58517655F7D00D8F9FA /* IASKAppSettingsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5A417655F7D00D8F9FA /* IASKAppSettingsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F58717655F7D00D8F9FA /* IASKAppSettingsWebViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5A517655F7D00D8F9FA /* IASKSpecifierValuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F58917655F7D00D8F9FA /* IASKSpecifierValuesViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5A617655F7D00D8F9FA /* IASKSettingsReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F58D17655F7D00D8F9FA /* IASKSettingsReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5A717655F7D00D8F9FA /* IASKSettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F58F17655F7D00D8F9FA /* IASKSettingsStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5A817655F7D00D8F9FA /* IASKSettingsStoreFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F59117655F7D00D8F9FA /* IASKSettingsStoreFile.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5A917655F7D00D8F9FA /* IASKSettingsStoreUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F59317655F7D00D8F9FA /* IASKSettingsStoreUserDefaults.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5AA17655F7D00D8F9FA /* IASKSpecifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F59517655F7D00D8F9FA /* IASKSpecifier.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5AB17655F7D00D8F9FA /* IASKPSSliderSpecifierViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F59817655F7D00D8F9FA /* IASKPSSliderSpecifierViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5AC17655F7D00D8F9FA /* IASKPSTextFieldSpecifierViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F59A17655F7D00D8F9FA /* IASKPSTextFieldSpecifierViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5AD17655F7D00D8F9FA /* IASKPSTitleValueSpecifierViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F59C17655F7D00D8F9FA /* IASKPSTitleValueSpecifierViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5AE17655F7D00D8F9FA /* IASKSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F59E17655F7D00D8F9FA /* IASKSlider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5AF17655F7D00D8F9FA /* IASKSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F5A017655F7D00D8F9FA /* IASKSwitch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B48F5B017655F7D00D8F9FA /* IASKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48F5A217655F7D00D8F9FA /* IASKTextField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B64F4BA1755799C001D3105 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B64F4B91755799C001D3105 /* UIKit.framework */; };
+		3B64F4BC1755799C001D3105 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B64F4BB1755799C001D3105 /* Foundation.framework */; };
+		3B64F4BE1755799C001D3105 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B64F4BD1755799C001D3105 /* CoreGraphics.framework */; };
+		3B64F4C41755799C001D3105 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4C21755799C001D3105 /* InfoPlist.strings */; };
+		3B64F4C61755799C001D3105 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B64F4C51755799C001D3105 /* main.m */; };
+		3B64F4CA1755799C001D3105 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B64F4C91755799C001D3105 /* AppDelegate.m */; };
+		3B64F4CC1755799C001D3105 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4CB1755799C001D3105 /* Default.png */; };
+		3B64F4CE1755799C001D3105 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4CD1755799C001D3105 /* Default@2x.png */; };
+		3B64F4D01755799C001D3105 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4CF1755799C001D3105 /* Default-568h@2x.png */; };
+		3B64F4D31755799C001D3105 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4D11755799C001D3105 /* MainStoryboard.storyboard */; };
+		3B64F4E017557AE3001D3105 /* RestaurantCelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B64F4DF17557AE3001D3105 /* RestaurantCelectionViewController.m */; };
+		3B64F4E417557D20001D3105 /* burgerking.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4E217557D20001D3105 /* burgerking.png */; };
+		3B64F4E517557D20001D3105 /* subway.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4E317557D20001D3105 /* subway.png */; };
+		3B64F4E917557D3B001D3105 /* hungryjacks.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4E617557D3B001D3105 /* hungryjacks.png */; };
+		3B64F4EA17557D3B001D3105 /* kfc.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4E717557D3B001D3105 /* kfc.png */; };
+		3B64F4EB17557D3B001D3105 /* mcdonalds.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B64F4E817557D3B001D3105 /* mcdonalds.png */; };
+		3B64F4EE17557E5C001D3105 /* RestaurantCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B64F4ED17557E5C001D3105 /* RestaurantCollectionViewCell.m */; };
+		3B733DA6177150FB00EC1F88 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B733DA5177150FB00EC1F88 /* GoogleMaps.framework */; };
+		3B733DA81771510800EC1F88 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B733DA71771510800EC1F88 /* GoogleMaps.bundle */; };
+		3B8F32A9176566E8000538CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8F32A8176566E8000538CD /* MessageUI.framework */; };
+		3B8F32AC17657837000538CD /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F32AB17657837000538CD /* AppleMapViewController.m */; };
+		3B8F32AE176586B5000538CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8F32AD176586B5000538CD /* MapKit.framework */; };
+		3B93E576175D79DA00FEAE77 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B93E574175D79DA00FEAE77 /* arrow.png */; };
+		3B93E577175D79DA00FEAE77 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B93E575175D79DA00FEAE77 /* arrow@2x.png */; };
+		3B93E57D175DBF3A00FEAE77 /* glow-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B93E57B175DBF3A00FEAE77 /* glow-marker.png */; };
+		3B93E57E175DBF3A00FEAE77 /* glow-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B93E57C175DBF3A00FEAE77 /* glow-marker@2x.png */; };
+		3B93E581175F35CE00FEAE77 /* CustomeGMSMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B93E580175F35CE00FEAE77 /* CustomeGMSMarker.m */; };
+		3B9A32AA175836E600522222 /* GoogleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A32A9175836E600522222 /* GoogleMapViewController.m */; };
+		3B9A32B31758CCB700522222 /* SearchResultHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A32B21758CCB700522222 /* SearchResultHeaderView.m */; };
+		3B9A32B71758D36500522222 /* NetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A32B61758D36500522222 /* NetRequest.m */; };
+		3B9A9E741766B3F7002EFEBB /* MapSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A9E731766B3F7002EFEBB /* MapSearchController.m */; };
+		3B9A9E771766E82D002EFEBB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A9E761766E82D002EFEBB /* MapViewController.m */; };
+		3B9A9E7A176AB406002EFEBB /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A9E79176AB406002EFEBB /* CustomPointAnnotation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B47311217558CAB007A52D2 /* SearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultController.h; sourceTree = "<group>"; };
+		3B47311317558CAC007A52D2 /* SearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultController.m; sourceTree = "<group>"; };
+		3B47311617559226007A52D2 /* RestaurantData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantData.h; sourceTree = "<group>"; };
+		3B47311717559226007A52D2 /* RestaurantData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantData.m; sourceTree = "<group>"; };
+		3B47311C1755951B007A52D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3B47311F17559840007A52D2 /* RestaurantDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDataController.h; sourceTree = "<group>"; };
+		3B47312017559840007A52D2 /* RestaurantDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDataController.m; sourceTree = "<group>"; };
+		3B473125175732E9007A52D2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		3B473126175732E9007A52D2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		3B47312C17573797007A52D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3B47312E175737A2007A52D2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		3B473130175737B2007A52D2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3B473132175737BA007A52D2 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		3B473134175737D5007A52D2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		3B473136175737E0007A52D2 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		3B473138175737FB007A52D2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3B47313A1757380E007A52D2 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		3B47313C17573816007A52D2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3B47313E17573828007A52D2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3B47314017573830007A52D2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3B47314317582546007A52D2 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		3B47314417582546007A52D2 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		3B48F5751761AF2000D8F9FA /* indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "indicator@2x.png"; sourceTree = "<group>"; };
+		3B48F577176553E100D8F9FA /* InAppSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = InAppSettings.bundle; sourceTree = "<group>"; };
+		3B48F58417655F7D00D8F9FA /* IASKAppSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKAppSettingsViewController.h; sourceTree = "<group>"; };
+		3B48F58517655F7D00D8F9FA /* IASKAppSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKAppSettingsViewController.m; sourceTree = "<group>"; };
+		3B48F58617655F7D00D8F9FA /* IASKAppSettingsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKAppSettingsWebViewController.h; sourceTree = "<group>"; };
+		3B48F58717655F7D00D8F9FA /* IASKAppSettingsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKAppSettingsWebViewController.m; sourceTree = "<group>"; };
+		3B48F58817655F7D00D8F9FA /* IASKSpecifierValuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSpecifierValuesViewController.h; sourceTree = "<group>"; };
+		3B48F58917655F7D00D8F9FA /* IASKSpecifierValuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSpecifierValuesViewController.m; sourceTree = "<group>"; };
+		3B48F58A17655F7D00D8F9FA /* IASKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKViewController.h; sourceTree = "<group>"; };
+		3B48F58C17655F7D00D8F9FA /* IASKSettingsReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSettingsReader.h; sourceTree = "<group>"; };
+		3B48F58D17655F7D00D8F9FA /* IASKSettingsReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSettingsReader.m; sourceTree = "<group>"; };
+		3B48F58E17655F7D00D8F9FA /* IASKSettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSettingsStore.h; sourceTree = "<group>"; };
+		3B48F58F17655F7D00D8F9FA /* IASKSettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSettingsStore.m; sourceTree = "<group>"; };
+		3B48F59017655F7D00D8F9FA /* IASKSettingsStoreFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSettingsStoreFile.h; sourceTree = "<group>"; };
+		3B48F59117655F7D00D8F9FA /* IASKSettingsStoreFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSettingsStoreFile.m; sourceTree = "<group>"; };
+		3B48F59217655F7D00D8F9FA /* IASKSettingsStoreUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSettingsStoreUserDefaults.h; sourceTree = "<group>"; };
+		3B48F59317655F7D00D8F9FA /* IASKSettingsStoreUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSettingsStoreUserDefaults.m; sourceTree = "<group>"; };
+		3B48F59417655F7D00D8F9FA /* IASKSpecifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSpecifier.h; sourceTree = "<group>"; };
+		3B48F59517655F7D00D8F9FA /* IASKSpecifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSpecifier.m; sourceTree = "<group>"; };
+		3B48F59717655F7D00D8F9FA /* IASKPSSliderSpecifierViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKPSSliderSpecifierViewCell.h; sourceTree = "<group>"; };
+		3B48F59817655F7D00D8F9FA /* IASKPSSliderSpecifierViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKPSSliderSpecifierViewCell.m; sourceTree = "<group>"; };
+		3B48F59917655F7D00D8F9FA /* IASKPSTextFieldSpecifierViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKPSTextFieldSpecifierViewCell.h; sourceTree = "<group>"; };
+		3B48F59A17655F7D00D8F9FA /* IASKPSTextFieldSpecifierViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKPSTextFieldSpecifierViewCell.m; sourceTree = "<group>"; };
+		3B48F59B17655F7D00D8F9FA /* IASKPSTitleValueSpecifierViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKPSTitleValueSpecifierViewCell.h; sourceTree = "<group>"; };
+		3B48F59C17655F7D00D8F9FA /* IASKPSTitleValueSpecifierViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKPSTitleValueSpecifierViewCell.m; sourceTree = "<group>"; };
+		3B48F59D17655F7D00D8F9FA /* IASKSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSlider.h; sourceTree = "<group>"; };
+		3B48F59E17655F7D00D8F9FA /* IASKSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSlider.m; sourceTree = "<group>"; };
+		3B48F59F17655F7D00D8F9FA /* IASKSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSwitch.h; sourceTree = "<group>"; };
+		3B48F5A017655F7D00D8F9FA /* IASKSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKSwitch.m; sourceTree = "<group>"; };
+		3B48F5A117655F7D00D8F9FA /* IASKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKTextField.h; sourceTree = "<group>"; };
+		3B48F5A217655F7D00D8F9FA /* IASKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IASKTextField.m; sourceTree = "<group>"; };
+		3B64F4B61755799C001D3105 /* FindFastFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFastFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B64F4B91755799C001D3105 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3B64F4BB1755799C001D3105 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B64F4BD1755799C001D3105 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3B64F4C11755799C001D3105 /* FindFastFood-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FindFastFood-Info.plist"; sourceTree = "<group>"; };
+		3B64F4C31755799C001D3105 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B64F4C51755799C001D3105 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B64F4C71755799C001D3105 /* FindFastFood-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FindFastFood-Prefix.pch"; sourceTree = "<group>"; };
+		3B64F4C81755799C001D3105 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3B64F4C91755799C001D3105 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3B64F4CB1755799C001D3105 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3B64F4CD1755799C001D3105 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3B64F4CF1755799C001D3105 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3B64F4D21755799C001D3105 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		3B64F4DE17557AE3001D3105 /* RestaurantCelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCelectionViewController.h; sourceTree = "<group>"; };
+		3B64F4DF17557AE3001D3105 /* RestaurantCelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCelectionViewController.m; sourceTree = "<group>"; };
+		3B64F4E217557D20001D3105 /* burgerking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burgerking.png; sourceTree = "<group>"; };
+		3B64F4E317557D20001D3105 /* subway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subway.png; sourceTree = "<group>"; };
+		3B64F4E617557D3B001D3105 /* hungryjacks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hungryjacks.png; sourceTree = "<group>"; };
+		3B64F4E717557D3B001D3105 /* kfc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kfc.png; sourceTree = "<group>"; };
+		3B64F4E817557D3B001D3105 /* mcdonalds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mcdonalds.png; sourceTree = "<group>"; };
+		3B64F4EC17557E5C001D3105 /* RestaurantCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCollectionViewCell.h; sourceTree = "<group>"; };
+		3B64F4ED17557E5C001D3105 /* RestaurantCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCollectionViewCell.m; sourceTree = "<group>"; };
+		3B733DA5177150FB00EC1F88 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		3B733DA71771510800EC1F88 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
+		3B8F32A8176566E8000538CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3B8F32AA17657837000538CD /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
+		3B8F32AB17657837000538CD /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
+		3B8F32AD176586B5000538CD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3B93E574175D79DA00FEAE77 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		3B93E575175D79DA00FEAE77 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		3B93E57B175DBF3A00FEAE77 /* glow-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glow-marker.png"; sourceTree = "<group>"; };
+		3B93E57C175DBF3A00FEAE77 /* glow-marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glow-marker@2x.png"; sourceTree = "<group>"; };
+		3B93E57F175F35CE00FEAE77 /* CustomeGMSMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomeGMSMarker.h; sourceTree = "<group>"; };
+		3B93E580175F35CE00FEAE77 /* CustomeGMSMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomeGMSMarker.m; sourceTree = "<group>"; };
+		3B9A32A8175836E600522222 /* GoogleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapViewController.h; sourceTree = "<group>"; };
+		3B9A32A9175836E600522222 /* GoogleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapViewController.m; sourceTree = "<group>"; };
+		3B9A32B11758CCB700522222 /* SearchResultHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultHeaderView.h; sourceTree = "<group>"; };
+		3B9A32B21758CCB700522222 /* SearchResultHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultHeaderView.m; sourceTree = "<group>"; };
+		3B9A32B51758D36500522222 /* NetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequest.h; sourceTree = "<group>"; };
+		3B9A32B61758D36500522222 /* NetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequest.m; sourceTree = "<group>"; };
+		3B9A32B91759D77B00522222 /* ApiKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiKey.h; sourceTree = "<group>"; };
+		3B9A9E721766B3F7002EFEBB /* MapSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSearchController.h; sourceTree = "<group>"; };
+		3B9A9E731766B3F7002EFEBB /* MapSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSearchController.m; sourceTree = "<group>"; };
+		3B9A9E751766E82D002EFEBB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		3B9A9E761766E82D002EFEBB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		3B9A9E78176AB406002EFEBB /* CustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointAnnotation.h; sourceTree = "<group>"; };
+		3B9A9E79176AB406002EFEBB /* CustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointAnnotation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B64F4B31755799C001D3105 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B8F32AE176586B5000538CD /* MapKit.framework in Frameworks */,
+				3B8F32A9176566E8000538CD /* MessageUI.framework in Frameworks */,
+				3B47313B1757380E007A52D2 /* libicucore.dylib in Frameworks */,
+				3B473137175737E0007A52D2 /* libc++.dylib in Frameworks */,
+				3B473139175737FB007A52D2 /* libz.dylib in Frameworks */,
+				3B47314117573830007A52D2 /* SystemConfiguration.framework in Frameworks */,
+				3B47313F17573828007A52D2 /* QuartzCore.framework in Frameworks */,
+				3B47313D17573816007A52D2 /* OpenGLES.framework in Frameworks */,
+				3B473135175737D5007A52D2 /* ImageIO.framework in Frameworks */,
+				3B473133175737BA007A52D2 /* GLKit.framework in Frameworks */,
+				3B473131175737B2007A52D2 /* AVFoundation.framework in Frameworks */,
+				3B47312F175737A2007A52D2 /* CoreText.framework in Frameworks */,
+				3B4731421757385E007A52D2 /* CoreData.framework in Frameworks */,
+				3B47311E17559542007A52D2 /* CoreLocation.framework in Frameworks */,
+				3B64F4BA1755799C001D3105 /* UIKit.framework in Frameworks */,
+				3B64F4BC1755799C001D3105 /* Foundation.framework in Frameworks */,
+				3B64F4BE1755799C001D3105 /* CoreGraphics.framework in Frameworks */,
+				3B733DA6177150FB00EC1F88 /* GoogleMaps.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B473115175591C8007A52D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B47311617559226007A52D2 /* RestaurantData.h */,
+				3B47311717559226007A52D2 /* RestaurantData.m */,
+				3B47311F17559840007A52D2 /* RestaurantDataController.h */,
+				3B47312017559840007A52D2 /* RestaurantDataController.m */,
+				3B473125175732E9007A52D2 /* Constants.h */,
+				3B473126175732E9007A52D2 /* Constants.m */,
+				3B47314317582546007A52D2 /* Restaurant.h */,
+				3B47314417582546007A52D2 /* Restaurant.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3B48F58217655F7D00D8F9FA /* InAppSettingsKit */ = {
+			isa = PBXGroup;
+			children = (
+				3B48F58317655F7D00D8F9FA /* Controllers */,
+				3B48F58B17655F7D00D8F9FA /* Models */,
+				3B48F59617655F7D00D8F9FA /* Views */,
+			);
+			path = InAppSettingsKit;
+			sourceTree = "<group>";
+		};
+		3B48F58317655F7D00D8F9FA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B48F58417655F7D00D8F9FA /* IASKAppSettingsViewController.h */,
+				3B48F58517655F7D00D8F9FA /* IASKAppSettingsViewController.m */,
+				3B48F58617655F7D00D8F9FA /* IASKAppSettingsWebViewController.h */,
+				3B48F58717655F7D00D8F9FA /* IASKAppSettingsWebViewController.m */,
+				3B48F58817655F7D00D8F9FA /* IASKSpecifierValuesViewController.h */,
+				3B48F58917655F7D00D8F9FA /* IASKSpecifierValuesViewController.m */,
+				3B48F58A17655F7D00D8F9FA /* IASKViewController.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3B48F58B17655F7D00D8F9FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B48F58C17655F7D00D8F9FA /* IASKSettingsReader.h */,
+				3B48F58D17655F7D00D8F9FA /* IASKSettingsReader.m */,
+				3B48F58E17655F7D00D8F9FA /* IASKSettingsStore.h */,
+				3B48F58F17655F7D00D8F9FA /* IASKSettingsStore.m */,
+				3B48F59017655F7D00D8F9FA /* IASKSettingsStoreFile.h */,
+				3B48F59117655F7D00D8F9FA /* IASKSettingsStoreFile.m */,
+				3B48F59217655F7D00D8F9FA /* IASKSettingsStoreUserDefaults.h */,
+				3B48F59317655F7D00D8F9FA /* IASKSettingsStoreUserDefaults.m */,
+				3B48F59417655F7D00D8F9FA /* IASKSpecifier.h */,
+				3B48F59517655F7D00D8F9FA /* IASKSpecifier.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3B48F59617655F7D00D8F9FA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B48F59717655F7D00D8F9FA /* IASKPSSliderSpecifierViewCell.h */,
+				3B48F59817655F7D00D8F9FA /* IASKPSSliderSpecifierViewCell.m */,
+				3B48F59917655F7D00D8F9FA /* IASKPSTextFieldSpecifierViewCell.h */,
+				3B48F59A17655F7D00D8F9FA /* IASKPSTextFieldSpecifierViewCell.m */,
+				3B48F59B17655F7D00D8F9FA /* IASKPSTitleValueSpecifierViewCell.h */,
+				3B48F59C17655F7D00D8F9FA /* IASKPSTitleValueSpecifierViewCell.m */,
+				3B48F59D17655F7D00D8F9FA /* IASKSlider.h */,
+				3B48F59E17655F7D00D8F9FA /* IASKSlider.m */,
+				3B48F59F17655F7D00D8F9FA /* IASKSwitch.h */,
+				3B48F5A017655F7D00D8F9FA /* IASKSwitch.m */,
+				3B48F5A117655F7D00D8F9FA /* IASKTextField.h */,
+				3B48F5A217655F7D00D8F9FA /* IASKTextField.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3B64F4AD1755799C001D3105 = {
+			isa = PBXGroup;
+			children = (
+				3B48F577176553E100D8F9FA /* InAppSettings.bundle */,
+				3B48F58217655F7D00D8F9FA /* InAppSettingsKit */,
+				3B64F4BF1755799C001D3105 /* FindFastFood */,
+				3B64F4B81755799C001D3105 /* Frameworks */,
+				3B64F4B71755799C001D3105 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B64F4B71755799C001D3105 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B64F4B61755799C001D3105 /* FindFastFood.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B64F4B81755799C001D3105 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B733DA71771510800EC1F88 /* GoogleMaps.bundle */,
+				3B733DA5177150FB00EC1F88 /* GoogleMaps.framework */,
+				3B8F32AD176586B5000538CD /* MapKit.framework */,
+				3B8F32A8176566E8000538CD /* MessageUI.framework */,
+				3B47314017573830007A52D2 /* SystemConfiguration.framework */,
+				3B47313E17573828007A52D2 /* QuartzCore.framework */,
+				3B47313C17573816007A52D2 /* OpenGLES.framework */,
+				3B47313A1757380E007A52D2 /* libicucore.dylib */,
+				3B473138175737FB007A52D2 /* libz.dylib */,
+				3B473136175737E0007A52D2 /* libc++.dylib */,
+				3B473134175737D5007A52D2 /* ImageIO.framework */,
+				3B473132175737BA007A52D2 /* GLKit.framework */,
+				3B473130175737B2007A52D2 /* AVFoundation.framework */,
+				3B47312E175737A2007A52D2 /* CoreText.framework */,
+				3B47312C17573797007A52D2 /* CoreData.framework */,
+				3B47311C1755951B007A52D2 /* CoreLocation.framework */,
+				3B64F4B91755799C001D3105 /* UIKit.framework */,
+				3B64F4BB1755799C001D3105 /* Foundation.framework */,
+				3B64F4BD1755799C001D3105 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B64F4BF1755799C001D3105 /* FindFastFood */ = {
+			isa = PBXGroup;
+			children = (
+				3B64F4DC175579AE001D3105 /* View Controllers */,
+				3B9A32B41758D2E900522222 /* Net */,
+				3B473115175591C8007A52D2 /* Model */,
+				3B64F4DD175579BA001D3105 /* Views */,
+				3B9A32B81759D75E00522222 /* Util */,
+				3B64F4C81755799C001D3105 /* AppDelegate.h */,
+				3B64F4C91755799C001D3105 /* AppDelegate.m */,
+				3B64F4D11755799C001D3105 /* MainStoryboard.storyboard */,
+				3B64F4C01755799C001D3105 /* Supporting Files */,
+			);
+			name = FindFastFood;
+			path = FastFoodLocator;
+			sourceTree = "<group>";
+		};
+		3B64F4C01755799C001D3105 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B64F4E117557BE4001D3105 /* Images */,
+				3B64F4C11755799C001D3105 /* FindFastFood-Info.plist */,
+				3B64F4C21755799C001D3105 /* InfoPlist.strings */,
+				3B64F4C51755799C001D3105 /* main.m */,
+				3B64F4C71755799C001D3105 /* FindFastFood-Prefix.pch */,
+				3B64F4CB1755799C001D3105 /* Default.png */,
+				3B64F4CD1755799C001D3105 /* Default@2x.png */,
+				3B64F4CF1755799C001D3105 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B64F4DC175579AE001D3105 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B64F4DE17557AE3001D3105 /* RestaurantCelectionViewController.h */,
+				3B64F4DF17557AE3001D3105 /* RestaurantCelectionViewController.m */,
+				3B47311217558CAB007A52D2 /* SearchResultController.h */,
+				3B47311317558CAC007A52D2 /* SearchResultController.m */,
+				3B9A32A8175836E600522222 /* GoogleMapViewController.h */,
+				3B9A32A9175836E600522222 /* GoogleMapViewController.m */,
+				3B8F32AA17657837000538CD /* AppleMapViewController.h */,
+				3B8F32AB17657837000538CD /* AppleMapViewController.m */,
+				3B9A9E751766E82D002EFEBB /* MapViewController.h */,
+				3B9A9E761766E82D002EFEBB /* MapViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3B64F4DD175579BA001D3105 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B64F4EC17557E5C001D3105 /* RestaurantCollectionViewCell.h */,
+				3B64F4ED17557E5C001D3105 /* RestaurantCollectionViewCell.m */,
+				3B9A32B11758CCB700522222 /* SearchResultHeaderView.h */,
+				3B9A32B21758CCB700522222 /* SearchResultHeaderView.m */,
+				3B9A9E78176AB406002EFEBB /* CustomPointAnnotation.h */,
+				3B9A9E79176AB406002EFEBB /* CustomPointAnnotation.m */,
+				3B93E57F175F35CE00FEAE77 /* CustomeGMSMarker.h */,
+				3B93E580175F35CE00FEAE77 /* CustomeGMSMarker.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3B64F4E117557BE4001D3105 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3B48F5751761AF2000D8F9FA /* indicator@2x.png */,
+				3B93E57B175DBF3A00FEAE77 /* glow-marker.png */,
+				3B93E57C175DBF3A00FEAE77 /* glow-marker@2x.png */,
+				3B93E574175D79DA00FEAE77 /* arrow.png */,
+				3B93E575175D79DA00FEAE77 /* arrow@2x.png */,
+				3B64F4E617557D3B001D3105 /* hungryjacks.png */,
+				3B64F4E717557D3B001D3105 /* kfc.png */,
+				3B64F4E817557D3B001D3105 /* mcdonalds.png */,
+				3B64F4E217557D20001D3105 /* burgerking.png */,
+				3B64F4E317557D20001D3105 /* subway.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		3B9A32B41758D2E900522222 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				3B9A32B51758D36500522222 /* NetRequest.h */,
+				3B9A32B61758D36500522222 /* NetRequest.m */,
+				3B9A9E721766B3F7002EFEBB /* MapSearchController.h */,
+				3B9A9E731766B3F7002EFEBB /* MapSearchController.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
+		3B9A32B81759D75E00522222 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3B9A32B91759D77B00522222 /* ApiKey.h */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B64F4B51755799C001D3105 /* FindFastFood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B64F4D91755799C001D3105 /* Build configuration list for PBXNativeTarget "FindFastFood" */;
+			buildPhases = (
+				3B64F4B21755799C001D3105 /* Sources */,
+				3B64F4B31755799C001D3105 /* Frameworks */,
+				3B64F4B41755799C001D3105 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindFastFood;
+			productName = FastFoodLocator;
+			productReference = 3B64F4B61755799C001D3105 /* FindFastFood.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B64F4AE1755799C001D3105 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Ning Gu";
+			};
+			buildConfigurationList = 3B64F4B11755799C001D3105 /* Build configuration list for PBXProject "FindFastFood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3B64F4AD1755799C001D3105;
+			productRefGroup = 3B64F4B71755799C001D3105 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B64F4B51755799C001D3105 /* FindFastFood */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B64F4B41755799C001D3105 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B64F4C41755799C001D3105 /* InfoPlist.strings in Resources */,
+				3B64F4CC1755799C001D3105 /* Default.png in Resources */,
+				3B64F4CE1755799C001D3105 /* Default@2x.png in Resources */,
+				3B64F4D01755799C001D3105 /* Default-568h@2x.png in Resources */,
+				3B64F4D31755799C001D3105 /* MainStoryboard.storyboard in Resources */,
+				3B64F4E417557D20001D3105 /* burgerking.png in Resources */,
+				3B64F4E517557D20001D3105 /* subway.png in Resources */,
+				3B64F4E917557D3B001D3105 /* hungryjacks.png in Resources */,
+				3B64F4EA17557D3B001D3105 /* kfc.png in Resources */,
+				3B64F4EB17557D3B001D3105 /* mcdonalds.png in Resources */,
+				3B93E576175D79DA00FEAE77 /* arrow.png in Resources */,
+				3B93E577175D79DA00FEAE77 /* arrow@2x.png in Resources */,
+				3B93E57D175DBF3A00FEAE77 /* glow-marker.png in Resources */,
+				3B93E57E175DBF3A00FEAE77 /* glow-marker@2x.png in Resources */,
+				3B48F5761761AF2000D8F9FA /* indicator@2x.png in Resources */,
+				3B48F578176553E200D8F9FA /* InAppSettings.bundle in Resources */,
+				3B733DA81771510800EC1F88 /* GoogleMaps.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B64F4B21755799C001D3105 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B64F4C61755799C001D3105 /* main.m in Sources */,
+				3B64F4CA1755799C001D3105 /* AppDelegate.m in Sources */,
+				3B64F4E017557AE3001D3105 /* RestaurantCelectionViewController.m in Sources */,
+				3B64F4EE17557E5C001D3105 /* RestaurantCollectionViewCell.m in Sources */,
+				3B47311417558CAC007A52D2 /* SearchResultController.m in Sources */,
+				3B47311817559226007A52D2 /* RestaurantData.m in Sources */,
+				3B47312117559841007A52D2 /* RestaurantDataController.m in Sources */,
+				3B473127175732E9007A52D2 /* Constants.m in Sources */,
+				3B47314517582546007A52D2 /* Restaurant.m in Sources */,
+				3B9A32AA175836E600522222 /* GoogleMapViewController.m in Sources */,
+				3B9A32B31758CCB700522222 /* SearchResultHeaderView.m in Sources */,
+				3B9A32B71758D36500522222 /* NetRequest.m in Sources */,
+				3B93E581175F35CE00FEAE77 /* CustomeGMSMarker.m in Sources */,
+				3B48F5A317655F7D00D8F9FA /* IASKAppSettingsViewController.m in Sources */,
+				3B48F5A417655F7D00D8F9FA /* IASKAppSettingsWebViewController.m in Sources */,
+				3B48F5A517655F7D00D8F9FA /* IASKSpecifierValuesViewController.m in Sources */,
+				3B48F5A617655F7D00D8F9FA /* IASKSettingsReader.m in Sources */,
+				3B48F5A717655F7D00D8F9FA /* IASKSettingsStore.m in Sources */,
+				3B48F5A817655F7D00D8F9FA /* IASKSettingsStoreFile.m in Sources */,
+				3B48F5A917655F7D00D8F9FA /* IASKSettingsStoreUserDefaults.m in Sources */,
+				3B48F5AA17655F7D00D8F9FA /* IASKSpecifier.m in Sources */,
+				3B48F5AB17655F7D00D8F9FA /* IASKPSSliderSpecifierViewCell.m in Sources */,
+				3B48F5AC17655F7D00D8F9FA /* IASKPSTextFieldSpecifierViewCell.m in Sources */,
+				3B48F5AD17655F7D00D8F9FA /* IASKPSTitleValueSpecifierViewCell.m in Sources */,
+				3B48F5AE17655F7D00D8F9FA /* IASKSlider.m in Sources */,
+				3B48F5AF17655F7D00D8F9FA /* IASKSwitch.m in Sources */,
+				3B48F5B017655F7D00D8F9FA /* IASKTextField.m in Sources */,
+				3B8F32AC17657837000538CD /* AppleMapViewController.m in Sources */,
+				3B9A9E741766B3F7002EFEBB /* MapSearchController.m in Sources */,
+				3B9A9E771766E82D002EFEBB /* MapViewController.m in Sources */,
+				3B9A9E7A176AB406002EFEBB /* CustomPointAnnotation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B64F4C21755799C001D3105 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B64F4C31755799C001D3105 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3B64F4D11755799C001D3105 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B64F4D21755799C001D3105 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B64F4D71755799C001D3105 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ning Gu (26L4H34274)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ning Gu (26L4H34274)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3B64F4D81755799C001D3105 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ning Gu (26L4H34274)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ning Gu (26L4H34274)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B64F4DA1755799C001D3105 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ning Gu (26L4H34274)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ning Gu (26L4H34274)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FastFoodLocator/FindFastFood-Prefix.pch";
+				INFOPLIST_FILE = "FastFoodLocator/FindFastFood-Info.plist";
+				PRODUCT_NAME = FindFastFood;
+				PROVISIONING_PROFILE = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3B64F4DB1755799C001D3105 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ning Gu (26L4H34274)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ning Gu (26L4H34274)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FastFoodLocator/FindFastFood-Prefix.pch";
+				INFOPLIST_FILE = "FastFoodLocator/FindFastFood-Info.plist";
+				PRODUCT_NAME = FindFastFood;
+				PROVISIONING_PROFILE = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B64F4B11755799C001D3105 /* Build configuration list for PBXProject "FindFastFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B64F4D71755799C001D3105 /* Debug */,
+				3B64F4D81755799C001D3105 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B64F4D91755799C001D3105 /* Build configuration list for PBXNativeTarget "FindFastFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B64F4DA1755799C001D3105 /* Debug */,
+				3B64F4DB1755799C001D3105 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B64F4AE1755799C001D3105 /* Project object */;
+}
