@@ -24,8 +24,6 @@
     
     UIAlertView *loadingDialog;
     
-//    SearchResultHeaderView *headerView;
-    
     CLLocationManager *locationManager;
     CLGeocoder *geocoder;
     
