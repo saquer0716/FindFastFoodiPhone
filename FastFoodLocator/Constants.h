@@ -23,6 +23,7 @@ extern NSString *const RESTAURANT_MC;
 extern NSString *const RESTAURANT_BK;
 extern NSString *const RESTAURANT_SW;
 extern NSString *const RESTAURANT_HJ;
+extern NSString *const RATE_LINK;
 
 extern NSString *getRestaurantName(NSInteger index);
 

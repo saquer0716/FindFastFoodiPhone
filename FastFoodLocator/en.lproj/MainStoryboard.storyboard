@@ -77,6 +77,12 @@
                                     <constraint firstAttribute="height" constant="44" type="user" id="O5q-wn-vKR"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hU4-wK-Pj0" customClass="GADBannerView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="150" constant="50" type="user" id="RgK-Np-4ks"/>
+                                </constraints>
+                            </view>
                             <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BE4-Z8-TJt">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -132,22 +138,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BE4-Z8-TJt" firstAttribute="trailing" secondItem="AFb-hh-Ljc" secondAttribute="trailing" type="user" id="BjA-nf-ldr"/>
-                            <constraint firstAttribute="bottom" secondItem="e8a-gr-HpK" secondAttribute="bottom" type="user" id="JEh-dG-I6B"/>
+                            <constraint firstItem="BE4-Z8-TJt" firstAttribute="trailing" secondItem="AFb-hh-Ljc" secondAttribute="trailing" type="default" id="3gP-ya-S7B"/>
+                            <constraint firstAttribute="bottom" secondItem="e8a-gr-HpK" secondAttribute="bottom" type="user" id="4ck-b8-wR7"/>
+                            <constraint firstItem="hU4-wK-Pj0" firstAttribute="trailing" secondItem="AFb-hh-Ljc" secondAttribute="trailing" type="default" id="8rV-Ll-T56"/>
+                            <constraint firstItem="hU4-wK-Pj0" firstAttribute="top" secondItem="8WQ-sa-I8k" secondAttribute="bottom" type="user" id="9zR-1U-IlQ"/>
+                            <constraint firstItem="e8a-gr-HpK" firstAttribute="top" secondItem="BE4-Z8-TJt" secondAttribute="bottom" type="user" id="FVH-aM-zoz"/>
                             <constraint firstItem="8WQ-sa-I8k" firstAttribute="leading" secondItem="AFb-hh-Ljc" secondAttribute="leading" type="default" id="Kmn-ze-adG"/>
+                            <constraint firstItem="8WQ-sa-I8k" firstAttribute="top" secondItem="AFb-hh-Ljc" secondAttribute="top" type="user" id="MVk-fc-iFp"/>
                             <constraint firstItem="BE4-Z8-TJt" firstAttribute="leading" secondItem="AFb-hh-Ljc" secondAttribute="leading" type="default" id="QMQ-VI-GrX"/>
-                            <constraint firstItem="8WQ-sa-I8k" firstAttribute="top" secondItem="AFb-hh-Ljc" secondAttribute="top" type="user" id="Ul2-oH-772"/>
                             <constraint firstAttribute="trailing" secondItem="e8a-gr-HpK" secondAttribute="trailing" constant="-10" type="user" id="XJm-LS-rcq"/>
-                            <constraint firstItem="e8a-gr-HpK" firstAttribute="top" secondItem="BE4-Z8-TJt" secondAttribute="bottom" type="user" id="YC6-Ay-0Vh"/>
-                            <constraint firstItem="BE4-Z8-TJt" firstAttribute="top" secondItem="AFb-hh-Ljc" secondAttribute="top" constant="44" type="user" id="YSG-rp-iaO"/>
                             <constraint firstItem="e8a-gr-HpK" firstAttribute="leading" secondItem="AFb-hh-Ljc" secondAttribute="leading" constant="-10" type="user" id="gMU-gD-HKO"/>
                             <constraint firstAttribute="centerX" secondItem="8WQ-sa-I8k" secondAttribute="centerX" type="user" id="r6d-FF-vr0"/>
-                            <constraint firstItem="BE4-Z8-TJt" firstAttribute="top" secondItem="8WQ-sa-I8k" secondAttribute="bottom" type="user" id="t1c-0S-YN8"/>
+                            <constraint firstItem="hU4-wK-Pj0" firstAttribute="leading" secondItem="AFb-hh-Ljc" secondAttribute="leading" type="default" id="sHP-Ly-Rhm"/>
+                            <constraint firstItem="BE4-Z8-TJt" firstAttribute="top" secondItem="hU4-wK-Pj0" secondAttribute="bottom" type="user" id="vLL-ja-gjG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d6p-uw-rAJ"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="hU4-wK-Pj0" id="Uhe-F3-VwY"/>
                         <outlet property="resultTableView" destination="BE4-Z8-TJt" id="h9s-xA-VO7"/>
                         <outlet property="resultTableViewHeader" destination="8WQ-sa-I8k" id="oay-N9-xgL"/>
                         <outlet property="travelTypeSegmentControl" destination="e8a-gr-HpK" id="xNy-Yg-Eix"/>
@@ -179,6 +188,55 @@
     <resources>
         <image name="glow-marker.png" width="31" height="44"/>
     </resources>
+    <classes>
+        <class className="GADBannerView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GADBannerView.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RestaurantCelectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantCelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="settings:"/>
+                <relationship kind="action" name="share:"/>
+            </relationships>
+        </class>
+        <class className="RestaurantCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="restaurantImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SearchResultController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeTravelType:"/>
+                <relationship kind="outlet" name="bannerView" candidateClass="GADBannerView"/>
+                <relationship kind="outlet" name="resultTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="resultTableViewHeader" candidateClass="SearchResultHeaderView"/>
+                <relationship kind="outlet" name="travelTypeSegmentControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="SearchResultHeaderView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultHeaderView.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

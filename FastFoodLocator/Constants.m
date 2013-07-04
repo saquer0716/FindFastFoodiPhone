@@ -14,6 +14,8 @@ NSString *const RESTAURANT_BK = @"%94burger+king%94";
 NSString *const RESTAURANT_SW = @"subway";
 NSString *const RESTAURANT_HJ = @"%94hungry+jack%94";
 
+NSString *const RATE_LINK = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=368754825&pageNumber=0&sortOrdering=1&type=Purple+Software&mt=8";
+
 NSString *getRestaurantName(NSInteger index)
 {
     NSString *name;

@@ -37,6 +37,20 @@
 //                                          action:@selector(handleTapGesture:)];
 //    [appleMapView addGestureRecognizer:self];
     
+    [self fillRect];
+    
+    [self addAnnotations];
+    
+    if (self.selectedRestaurant) {
+        if (self.travelType == DRIVING) {
+            [self drawPolyLine:self.selectedRestaurant.stepsOfDriving];
+        } else {
+            [self drawPolyLine:self.selectedRestaurant.stepsOfWalking];
+        }
+    }
+}
+
+- (void)fillRect{
     MKMapRect zoomRect = MKMapRectNull;
     MKMapPoint annotationPointMyLocation = MKMapPointForCoordinate(self.myLocation);
     MKMapRect rectMyLocation = MKMapRectMake(annotationPointMyLocation.x, annotationPointMyLocation.y, 0.1, 0.1);
@@ -66,16 +80,6 @@
     
     UIEdgeInsets mapInsect = UIEdgeInsetsMake(10.0, 10.0, 50, 10.0);
     [appleMapView setVisibleMapRect:zoomRect edgePadding:mapInsect animated:YES];
-    
-    [self addAnnotations];
-    
-    if (self.selectedRestaurant) {
-        if (self.travelType == DRIVING) {
-            [self drawPolyLine:self.selectedRestaurant.stepsOfDriving];
-        } else {
-            [self drawPolyLine:self.selectedRestaurant.stepsOfWalking];
-        }
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -149,6 +153,10 @@
         [self drawPolyLine:self.selectedRestaurant.stepsOfDriving];
     } else {
         [self drawPolyLine:self.selectedRestaurant.stepsOfWalking];
+    }
+    
+    if (self.zoomToMarker) {
+        [self fillRect];
     }
 }
 

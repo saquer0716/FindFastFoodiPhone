@@ -42,22 +42,34 @@
 {
     [super viewDidLoad];
     
-    selectedMap = [[NSUserDefaults standardUserDefaults] integerForKey:@"used_map_preference"];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshResultList)];
     
-    _resultTableView.autoresizingMask =
-    UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    //admob
+    //_bannerView =[[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    _bannerView.adSize = kGADAdSizeBanner;
+    _bannerView.adUnitID = @"a151d41056ebabb";
+    _bannerView.rootViewController = self;
+//    [self.view addSubview:_admobTest];
+    _bannerView.delegate = self;
+    _bannerView.frame = CGRectMake(0, 0, 320, 0);
+    
+    GADRequest *request = [GADRequest request];
+    request.testDevices = [NSArray arrayWithObjects:@"c3fff3701aaa817c60c1f357ec4bcdd8", nil];
+    
+    selectedMap = [[NSUserDefaults standardUserDefaults] integerForKey:@"used_map_preference"];
     
     //config table header view
     CGRect viewRect = CGRectMake(0, 0, 320, 44);
 //    _resultTableViewHeader = [[SearchResultHeaderView alloc] initWithFrame:viewRect];
     [_resultTableViewHeader initializeWithFrame:viewRect];
     
+//    [_resultTableViewHeader addConstraint:[NSLayoutConstraint constraintWithItem:_bannerView attribute:<#(NSLayoutAttribute)#> relatedBy:<#(NSLayoutRelation)#> toItem:<#(id)#> attribute:<#(NSLayoutAttribute)#> multiplier:<#(CGFloat)#> constant:<#(CGFloat)#>]
+    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleHeaderTap:)];
-
     [_resultTableViewHeader addGestureRecognizer:tapGesture];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshResultList)];
-    //[self configureToolBar];
+    _resultTableView.autoresizingMask =
+    UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     
     _restaurantDataController = [[RestaurantDataController alloc] init];
     [_restaurantDataController setNameOfRestaurant:_selectedRestaurant];
@@ -81,18 +93,18 @@
 
 - (BOOL)checkLocationService
 {
-    if (![CLLocationManager locationServicesEnabled]) {
-        if ([SVProgressHUD isVisible]) {
-            [SVProgressHUD dismiss];
-        }
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Location service not enabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
-        
-        return NO;
+    if ([CLLocationManager locationServicesEnabled]){// && ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized)
+        [SVProgressHUD showWithStatus:@"Getting current location..." maskType:SVProgressHUDMaskTypeBlack];
+        return YES;
     }
     
-    [SVProgressHUD showWithStatus:@"Getting current location..." maskType:SVProgressHUDMaskTypeBlack];
-    return YES;
+    if ([SVProgressHUD isVisible]) {
+        [SVProgressHUD dismiss];
+    }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Location service not enabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+
+    return NO;
 }
 
 //- (void)configAlertDialog
@@ -201,21 +213,15 @@
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-//    CGRect screenRect = [[UIScreen mainScreen] bounds];
-//    CGFloat screenWidth = screenRect.size.width;
-//    CGFloat screenHeight = screenRect.size.height;
-//    CGRect frame = _resultTableView.frame;
-//    
-//    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
-//        frame.size.width = screenHeight;
-//    }else if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)){
-//        frame.size.width = screenWidth;
-//    }
-//    
-//    [_resultTableView setNeedsLayout];
-//    
-//    _resultTableView.frame = frame;
+{ 
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)){
+        _bannerView.frame = CGRectMake(_bannerView.frame.origin.x, _bannerView.frame.origin.y, _bannerView.frame.size.width, 0);
+        return;
+    }
+    
+    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)){
+        _bannerView.frame = CGRectMake(_bannerView.frame.origin.x, _bannerView.frame.origin.y, _bannerView.frame.size.width, 50);
+    }
 }
 
 
@@ -262,6 +268,9 @@
     
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error == nil && placemarks.count > 0) {
+            _bannerView.frame = CGRectMake(_bannerView.frame.origin.x, _bannerView.frame.origin.y, _bannerView.frame.size.width, 50);
+            [_bannerView loadRequest:[GADRequest request]];
+            
             CLPlacemark *placemark = placemarks.lastObject;
             
             NSString *vicinity = [self buildVicinityFromPlaceMark:placemark];
@@ -275,6 +284,11 @@
             [_resultTableViewHeader changeLocationVicinity:@"Location unavailable"];
         }
     }];
+}
+
+- (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error
+{
+    _bannerView.frame = CGRectMake(_bannerView.frame.origin.x, _bannerView.frame.origin.y, _bannerView.frame.size.width, 0);
 }
 
 - (NSString *)buildVicinityFromPlaceMark:(CLPlacemark *)placemark

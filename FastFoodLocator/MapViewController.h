@@ -27,4 +27,6 @@
 
 @property (weak) id<MapTypeDelegate> delegate;
 
+@property (nonatomic) BOOL zoomToMarker;
+
 @end

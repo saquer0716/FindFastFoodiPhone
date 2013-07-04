@@ -21,6 +21,11 @@
         }else {
             distance = res.distanceTextWalking;
         }
+        
+        if (!distance) {
+            distance = @"";
+        }
+        
         self.title = [NSString stringWithFormat:@"%@  %@", res.name, distance];
         self.subtitle = res.vicinity;
         self.coordinate = res.location.coordinate;

@@ -21,6 +21,10 @@
     CLLocationCoordinate2D currentLocation;
     
     NSMutableArray *restaurantArray;
+    
+    int unitCode;
+    NSString *unitText;
+    int searchRange;
 }
 
 @end
@@ -32,6 +36,23 @@
     if (self = [super init]) {
         selectedMap = mapType;
         restaurantArray = list;
+        
+        unitCode = [[NSUserDefaults standardUserDefaults] integerForKey:@"distance_uit_preference"];
+        if (unitCode == 0) {
+            unitText = @"Kms";
+        }else if (unitCode == 1){
+            unitText = @"Miles";
+        }
+        
+        int searchRangeCode = [[NSUserDefaults standardUserDefaults] integerForKey:@"search_range_preference"];
+        if (searchRangeCode == 0) {
+            searchRange = 4000;
+        }else if (searchRangeCode == 1){
+            searchRange = 7000;
+        }else if (searchRangeCode == 2) {
+            searchRange = 10000;
+        }
+        
         return self;
     }
     
@@ -106,6 +127,13 @@
         [to deleteCharactersInRange:NSMakeRange(to.length - 1, 1)];
     }
     
+    NSString *unit;
+    if (unitCode == 0) {
+        unit = @"unit=k";
+    } else {
+        unit = @"unit=m";
+    }
+    
     NSString *routeType;
     if (travelType == DRIVING) {
         routeType = @"routeType=shortest";
@@ -117,8 +145,9 @@
     
     NSString *allToall = @"allToall=false";
     
-    NSString *searchUrl = [NSString stringWithFormat:@"%@&%@&%@&%@&%@&%@&%@", MAPQUEST_DIRECTION_URL, key, from, to, routeType, allToall, doReverseGeocode];
-
+    NSString *searchUrl = [NSString stringWithFormat:@"%@&%@&%@&%@&%@&%@&%@&%@", MAPQUEST_DIRECTION_URL, key, from, to, unit, routeType, allToall, doReverseGeocode];
+    
+    NSLog(@"%@", searchUrl);
     return searchUrl;
 }
 
@@ -126,7 +155,7 @@
 {
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     request.naturalLanguageQuery = [NSString stringWithFormat:@"%@ %@", searchRestaurant, @"restaurant"];
-    request.region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000);
+    request.region = MKCoordinateRegionMakeWithDistance(coordinate, searchRange + 5000, searchRange + 5000);
     
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
@@ -193,11 +222,11 @@
                         NSNumber *distance = [leg objectForKey:@"distance"];
                         
                         if (travelType == DRIVING) {
-                            restaurant.distanceTextDriving = [NSString stringWithFormat:@"%.2f%@", [distance floatValue], @" km"];
+                            restaurant.distanceTextDriving = [NSString stringWithFormat:@"%.2f %@", [distance floatValue], unitText];
                             restaurant.distanceValueDriving = distance;
                             step = restaurant.stepsOfDriving;
                         } else {
-                            restaurant.distanceTextWalking = [NSString stringWithFormat:@"%.2f%@", [distance floatValue], @" km"] ;
+                            restaurant.distanceTextWalking = [NSString stringWithFormat:@"%.2f %@", [distance floatValue], unitText] ;
                             restaurant.distanceValueWalking = distance;
                             step = restaurant.stepsOfWalking;
                         }
@@ -279,7 +308,7 @@
     NSString *location = [NSString stringWithFormat:@"location=%.8f,%.8f", currentLocation.latitude, currentLocation.longitude];
     
     //get radius from settings bundle;
-    NSString *radius = @"radius=5000";
+    NSString *radius = [NSString stringWithFormat:@"radius=%@", [NSString stringWithFormat:@"%d", searchRange]];
     NSString *types = @"types=restaurant%7Cfood";//ecode "|" to "%7C"
     NSString *sensor = @"sensor=false";
     NSString *searchUrl = [NSString stringWithFormat:@"%@&%@&%@&%@&%@&%@&%@", GOOGLE_PLACES_SEARCH_URL, key, name, location, radius, types, sensor];
@@ -306,8 +335,15 @@
         mode = @"mode=walking";
     }
     
+    NSString *units;
+    if (unitCode == 0) {
+        units = @"units=metric";
+    } else {
+        units = @"units=imperial";
+    }
+    
     NSString *sensor = @"sensor=false";
-    NSString *searchUrl = [NSString stringWithFormat:@"%@&%@&%@&%@&%@", GOOGLE_DISTANCE_CAL_URL, origins, destinations, sensor, mode];
+    NSString *searchUrl = [NSString stringWithFormat:@"%@&%@&%@&%@&%@&%@", GOOGLE_DISTANCE_CAL_URL, origins, destinations, sensor, mode, units];
     
     return searchUrl;
 }

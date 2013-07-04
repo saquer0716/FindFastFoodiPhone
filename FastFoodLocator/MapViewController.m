@@ -14,6 +14,9 @@ static NSString const* kSatelliteType = @"Satellite";
 static NSString const* kTerrainType = @"Terrain";
 
 @interface MapViewController ()
+{
+    
+}
 
 @end
 
@@ -32,6 +35,8 @@ static NSString const* kTerrainType = @"Terrain";
 {
     [super viewDidLoad];
 	[self configureToolBar];
+    
+    _zoomToMarker = [[NSUserDefaults standardUserDefaults] boolForKey:@"zoom_route_preference"];
 }
 
 - (void)configureToolBar

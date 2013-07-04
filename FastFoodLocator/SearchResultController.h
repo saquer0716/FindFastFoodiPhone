@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "RestaurantDataController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "GADBannerView.h"
+
 @class SearchResultHeaderView;
 
-@interface SearchResultController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
+@interface SearchResultController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, GADBannerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @property (weak, nonatomic) IBOutlet UITableView *resultTableView;
 

@@ -59,6 +59,12 @@
 		3B64F4EE17557E5C001D3105 /* RestaurantCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B64F4ED17557E5C001D3105 /* RestaurantCollectionViewCell.m */; };
 		3B733DA6177150FB00EC1F88 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B733DA5177150FB00EC1F88 /* GoogleMaps.framework */; };
 		3B733DA81771510800EC1F88 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B733DA71771510800EC1F88 /* GoogleMaps.bundle */; };
+		3B8C57B71783AC55003C8383 /* UICustomActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57B61783AB95003C8383 /* UICustomActionSheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B8C57C61784F1D3003C8383 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8C57C41784F1C2003C8383 /* AudioToolbox.framework */; };
+		3B8C57C91784F203003C8383 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8C57C71784F1DD003C8383 /* MediaPlayer.framework */; };
+		3B8C57CB1784F6D7003C8383 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8C57C21784F122003C8383 /* libGoogleAdMobAds.a */; };
+		3B8C57CF1784F83F003C8383 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8C57CE1784F83F003C8383 /* StoreKit.framework */; };
+		3B8C57D01784F860003C8383 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8C57CC1784F6EC003C8383 /* AdSupport.framework */; };
 		3B8F32A9176566E8000538CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8F32A8176566E8000538CD /* MessageUI.framework */; };
 		3B8F32AC17657837000538CD /* AppleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F32AB17657837000538CD /* AppleMapViewController.m */; };
 		3B8F32AE176586B5000538CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8F32AD176586B5000538CD /* MapKit.framework */; };
@@ -66,7 +72,6 @@
 		3B93E577175D79DA00FEAE77 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B93E575175D79DA00FEAE77 /* arrow@2x.png */; };
 		3B93E57D175DBF3A00FEAE77 /* glow-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B93E57B175DBF3A00FEAE77 /* glow-marker.png */; };
 		3B93E57E175DBF3A00FEAE77 /* glow-marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B93E57C175DBF3A00FEAE77 /* glow-marker@2x.png */; };
-		3B93E581175F35CE00FEAE77 /* CustomeGMSMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B93E580175F35CE00FEAE77 /* CustomeGMSMarker.m */; };
 		3B9A32AA175836E600522222 /* GoogleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A32A9175836E600522222 /* GoogleMapViewController.m */; };
 		3B9A32B31758CCB700522222 /* SearchResultHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A32B21758CCB700522222 /* SearchResultHeaderView.m */; };
 		3B9A32B71758D36500522222 /* NetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A32B61758D36500522222 /* NetRequest.m */; };
@@ -156,6 +161,22 @@
 		3B64F4ED17557E5C001D3105 /* RestaurantCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCollectionViewCell.m; sourceTree = "<group>"; };
 		3B733DA5177150FB00EC1F88 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		3B733DA71771510800EC1F88 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
+		3B8C57B51783AB95003C8383 /* UICustomActionSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICustomActionSheet.h; sourceTree = "<group>"; };
+		3B8C57B61783AB95003C8383 /* UICustomActionSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICustomActionSheet.m; sourceTree = "<group>"; };
+		3B8C57B91784F122003C8383 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
+		3B8C57BA1784F122003C8383 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
+		3B8C57BB1784F122003C8383 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
+		3B8C57BC1784F122003C8383 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		3B8C57BD1784F122003C8383 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		3B8C57BE1784F122003C8383 /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		3B8C57BF1784F122003C8383 /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		3B8C57C01784F122003C8383 /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		3B8C57C11784F122003C8383 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		3B8C57C21784F122003C8383 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		3B8C57C41784F1C2003C8383 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3B8C57C71784F1DD003C8383 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		3B8C57CC1784F6EC003C8383 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		3B8C57CE1784F83F003C8383 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3B8F32A8176566E8000538CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3B8F32AA17657837000538CD /* AppleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleMapViewController.h; sourceTree = "<group>"; };
 		3B8F32AB17657837000538CD /* AppleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleMapViewController.m; sourceTree = "<group>"; };
@@ -164,8 +185,6 @@
 		3B93E575175D79DA00FEAE77 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		3B93E57B175DBF3A00FEAE77 /* glow-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glow-marker.png"; sourceTree = "<group>"; };
 		3B93E57C175DBF3A00FEAE77 /* glow-marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glow-marker@2x.png"; sourceTree = "<group>"; };
-		3B93E57F175F35CE00FEAE77 /* CustomeGMSMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomeGMSMarker.h; sourceTree = "<group>"; };
-		3B93E580175F35CE00FEAE77 /* CustomeGMSMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomeGMSMarker.m; sourceTree = "<group>"; };
 		3B9A32A8175836E600522222 /* GoogleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapViewController.h; sourceTree = "<group>"; };
 		3B9A32A9175836E600522222 /* GoogleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapViewController.m; sourceTree = "<group>"; };
 		3B9A32B11758CCB700522222 /* SearchResultHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultHeaderView.h; sourceTree = "<group>"; };
@@ -189,12 +208,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B8F32AE176586B5000538CD /* MapKit.framework in Frameworks */,
+				3B8C57D01784F860003C8383 /* AdSupport.framework in Frameworks */,
+				3B8C57CF1784F83F003C8383 /* StoreKit.framework in Frameworks */,
+				3B8C57CB1784F6D7003C8383 /* libGoogleAdMobAds.a in Frameworks */,
+				3B8C57C91784F203003C8383 /* MediaPlayer.framework in Frameworks */,
+				3B47314117573830007A52D2 /* SystemConfiguration.framework in Frameworks */,
 				3B8F32A9176566E8000538CD /* MessageUI.framework in Frameworks */,
+				3B8C57C61784F1D3003C8383 /* AudioToolbox.framework in Frameworks */,
+				3B8F32AE176586B5000538CD /* MapKit.framework in Frameworks */,
 				3B47313B1757380E007A52D2 /* libicucore.dylib in Frameworks */,
 				3B473137175737E0007A52D2 /* libc++.dylib in Frameworks */,
 				3B473139175737FB007A52D2 /* libz.dylib in Frameworks */,
-				3B47314117573830007A52D2 /* SystemConfiguration.framework in Frameworks */,
 				3B47313F17573828007A52D2 /* QuartzCore.framework in Frameworks */,
 				3B47313D17573816007A52D2 /* OpenGLES.framework in Frameworks */,
 				3B473135175737D5007A52D2 /* ImageIO.framework in Frameworks */,
@@ -295,6 +319,7 @@
 				3B9AB3751782A9DA008FED40 /* SVProgressHUD */,
 				3B48F58217655F7D00D8F9FA /* InAppSettingsKit */,
 				3B64F4BF1755799C001D3105 /* FindFastFood */,
+				3B8C57B81784F121003C8383 /* Admob */,
 				3B64F4B81755799C001D3105 /* Frameworks */,
 				3B64F4B71755799C001D3105 /* Products */,
 			);
@@ -311,6 +336,10 @@
 		3B64F4B81755799C001D3105 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B8C57CC1784F6EC003C8383 /* AdSupport.framework */,
+				3B8C57CE1784F83F003C8383 /* StoreKit.framework */,
+				3B8C57C71784F1DD003C8383 /* MediaPlayer.framework */,
+				3B8C57C41784F1C2003C8383 /* AudioToolbox.framework */,
 				3B733DA71771510800EC1F88 /* GoogleMaps.bundle */,
 				3B733DA5177150FB00EC1F88 /* GoogleMaps.framework */,
 				3B8F32AD176586B5000538CD /* MapKit.framework */,
@@ -386,14 +415,14 @@
 		3B64F4DD175579BA001D3105 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3B8C57B51783AB95003C8383 /* UICustomActionSheet.h */,
+				3B8C57B61783AB95003C8383 /* UICustomActionSheet.m */,
 				3B64F4EC17557E5C001D3105 /* RestaurantCollectionViewCell.h */,
 				3B64F4ED17557E5C001D3105 /* RestaurantCollectionViewCell.m */,
 				3B9A32B11758CCB700522222 /* SearchResultHeaderView.h */,
 				3B9A32B21758CCB700522222 /* SearchResultHeaderView.m */,
 				3B9A9E78176AB406002EFEBB /* CustomPointAnnotation.h */,
 				3B9A9E79176AB406002EFEBB /* CustomPointAnnotation.m */,
-				3B93E57F175F35CE00FEAE77 /* CustomeGMSMarker.h */,
-				3B93E580175F35CE00FEAE77 /* CustomeGMSMarker.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -413,6 +442,23 @@
 				3B64F4E317557D20001D3105 /* subway.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		3B8C57B81784F121003C8383 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				3B8C57B91784F122003C8383 /* GADAdMobExtras.h */,
+				3B8C57BA1784F122003C8383 /* GADAdNetworkExtras.h */,
+				3B8C57BB1784F122003C8383 /* GADAdSize.h */,
+				3B8C57BC1784F122003C8383 /* GADBannerView.h */,
+				3B8C57BD1784F122003C8383 /* GADBannerViewDelegate.h */,
+				3B8C57BE1784F122003C8383 /* GADInterstitial.h */,
+				3B8C57BF1784F122003C8383 /* GADInterstitialDelegate.h */,
+				3B8C57C01784F122003C8383 /* GADRequest.h */,
+				3B8C57C11784F122003C8383 /* GADRequestError.h */,
+				3B8C57C21784F122003C8383 /* libGoogleAdMobAds.a */,
+			);
+			path = Admob;
 			sourceTree = "<group>";
 		};
 		3B9A32B41758D2E900522222 /* Net */ = {
@@ -523,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8C57B71783AC55003C8383 /* UICustomActionSheet.m in Sources */,
 				3B64F4C61755799C001D3105 /* main.m in Sources */,
 				3B64F4CA1755799C001D3105 /* AppDelegate.m in Sources */,
 				3B64F4E017557AE3001D3105 /* RestaurantCelectionViewController.m in Sources */,
@@ -535,7 +582,6 @@
 				3B9A32AA175836E600522222 /* GoogleMapViewController.m in Sources */,
 				3B9A32B31758CCB700522222 /* SearchResultHeaderView.m in Sources */,
 				3B9A32B71758D36500522222 /* NetRequest.m in Sources */,
-				3B93E581175F35CE00FEAE77 /* CustomeGMSMarker.m in Sources */,
 				3B48F5A317655F7D00D8F9FA /* IASKAppSettingsViewController.m in Sources */,
 				3B48F5A417655F7D00D8F9FA /* IASKAppSettingsWebViewController.m in Sources */,
 				3B48F5A517655F7D00D8F9FA /* IASKSpecifierValuesViewController.m in Sources */,
@@ -658,6 +704,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FastFoodLocator/FindFastFood-Prefix.pch";
 				INFOPLIST_FILE = "FastFoodLocator/FindFastFood-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Admob\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = FindFastFood;
 				PROVISIONING_PROFILE = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
@@ -677,6 +728,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FastFoodLocator/FindFastFood-Prefix.pch";
 				INFOPLIST_FILE = "FastFoodLocator/FindFastFood-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Admob\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = FindFastFood;
 				PROVISIONING_PROFILE = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EC97F6B3-9FF1-4362-889D-A6D6E4249669";

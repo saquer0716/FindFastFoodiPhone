@@ -11,7 +11,6 @@
 #import "Restaurant.h"
 #import "ApiKey.h"
 #import "NetRequest.h"
-#import "CustomeGMSMarker.h"
 #import "MapSearchController.h"
 
 @interface GoogleMapViewController ()
@@ -68,12 +67,26 @@
     for (int i = 0; i < self.restaurantArray.count; i++) {
         Restaurant *restaurant = [self.restaurantArray objectAtIndex:i];
    
-        CustomeGMSMarker *restaurantMarker = [[CustomeGMSMarker alloc] initWithRestaurant:restaurant by:self.travelType];
-//        restaurantMarker.title = [NSString stringWithFormat:@"%@  %@", restaurant.name, restaurant.distanceText];
+//        CustomeGMSMarker *restaurantMarker = [[CustomeGMSMarker alloc] initWithRestaurant:restaurant by:self.travelType];
+        
+        GMSMarker *restaurantMarker = [[GMSMarker alloc] init];
+        NSString *distance;
+        if (self.travelType == DRIVING) {
+            distance = restaurant.distanceTextDriving;
+        }else {
+            distance = restaurant.distanceTextWalking;
+        }
+        
+        if (!distance) {
+            distance = @"";
+        }
+        restaurantMarker.title = [NSString stringWithFormat:@"%@  %@", restaurant.name, distance];
         restaurantMarker.snippet = restaurant.vicinity;
-//        restaurantMarker.icon = [UIImage imageNamed:@"arrow"];
+        restaurantMarker.icon = [UIImage imageNamed:@"arrow"];
         restaurantMarker.position = restaurant.location.coordinate;
+        restaurantMarker.animated = YES;
         restaurantMarker.map = mapView;
+        restaurantMarker.userData = restaurant;
     }
     
 }
@@ -146,9 +159,12 @@
     }
 }
 
-- (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker {
-    CustomeGMSMarker *customMarker = (CustomeGMSMarker *)marker;
-    self.selectedRestaurant = customMarker.restaurant;
+- (BOOL)mapView:(GMSMapView *)theMapView didTapMarker:(GMSMarker *)marker {
+    self.selectedRestaurant = marker.userData;
+    
+    if (self.zoomToMarker) {
+        [self fitBounds];
+    }
     
     if (self.travelType == DRIVING) {
         steps = self.selectedRestaurant.stepsOfDriving;
@@ -166,8 +182,9 @@
 //        [activtyIndicator startAnimating];
         [self retrieveDirectionTo:marker.position forRestaurant:self.selectedRestaurant];
     }
-
-    return NO;
+    
+    theMapView.selectedMarker = marker;
+    return YES;
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate

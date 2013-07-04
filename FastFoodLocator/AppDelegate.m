@@ -17,9 +17,31 @@
     // Override point for customization after application launch.
     [GMSServices provideAPIKey:GOOGLE_MAP_SDK_IOS_KEY];
     
-    NSDictionary *mapDefaults = [NSDictionary
-                                 dictionaryWithObject:[NSNumber numberWithInteger:1] forKey:@"used_map_preference"];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:mapDefaults]; 
+    NSMutableDictionary *settingsDefaults = [[NSMutableDictionary alloc] init];
+    
+    [settingsDefaults setObject:[NSNumber numberWithInteger:1] forKey:@"used_map_preference"];
+    [settingsDefaults setObject:@"YES" forKey:@"zoom_route_preference"];
+    
+    [settingsDefaults setObject:[NSNumber numberWithInteger:1] forKey:@"search_range_preference"];
+    [settingsDefaults setObject:[NSNumber numberWithInteger:0] forKey:@"distance_uit_preference"];
+
+    [[NSUserDefaults standardUserDefaults] registerDefaults:settingsDefaults];
+//
+//    NSUserDefaults *standarUserDefaults = [NSUserDefaults standardUserDefaults];
+//    
+//    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"InAppSettings" ofType:@"bundle"];
+//    NSString *plistFile = [bundlePath stringByAppendingPathComponent:@"Root.plist"];
+//    
+//    NSDictionary *settingsDictionary = [NSDictionary dictionaryWithContentsOfFile:plistFile];
+//    NSArray *preferencesArray = [settingsDictionary objectForKey:@"PreferenceSpecifiers"];
+//    
+//    NSDictionary *drivingDistanceDictionary = [preferencesArray objectAtIndex:4];
+//    NSArray *drivingDistanceOptions = [drivingDistanceDictionary objectForKey:@"Titles"];
+//    
+//    NSDictionary *walkingDistanceDictionary = [preferencesArray objectAtIndex:5];
+//    NSArray *walkingDistanceOptions = [walkingDistanceDictionary objectForKey:@"Titles"];
+//
+//    [standarUserDefaults synchronize];
     
     return YES;
 }

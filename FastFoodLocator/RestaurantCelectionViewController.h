@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "IASKAppSettingsViewController.h"
 
-@interface RestaurantCelectionViewController : UICollectionViewController
+@interface RestaurantCelectionViewController : UICollectionViewController <UIActionSheetDelegate>
 
 @property (nonatomic, strong) IASKAppSettingsViewController *settingsViewController;
 - (IBAction)settings:(id)sender;
