@@ -75,10 +75,11 @@
     _restaurantDataController = [[RestaurantDataController alloc] init];
     [_restaurantDataController setNameOfRestaurant:_searchKeyword];
 
-    [_travelTypeSegmentControl setBackgroundColor:[UIColor clearColor]];
+    [_travelTypeSegmentControl setSegmentedControlStyle:UISegmentedControlStyleBar];
+    [_travelTypeSegmentControl setDividerImage:nil forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [_travelTypeSegmentControl setBackgroundImage:[UIImage imageNamed:@"tab_unselected"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [_travelTypeSegmentControl setBackgroundImage:[UIImage imageNamed:@"tab_selected"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    [_travelTypeSegmentControl setImage:[UIImage imageNamed:@"tab_driving_unselect.png"] forSegmentAtIndex:0];
+    [_travelTypeSegmentControl setImage:[UIImage imageNamed:@"tab_driving_select.png"] forSegmentAtIndex:0];
     [_travelTypeSegmentControl setImage:[UIImage imageNamed:@"tab_walking_unselect.png"] forSegmentAtIndex:1];
     
     mapSearchController = [[MapSearchController alloc] initWithMapType:selectedMap dataSrc:_restaurantDataController.restaurantData.restaurantArray];
@@ -374,11 +375,15 @@
 	{
         case DRIVING:
         {
+            [_travelTypeSegmentControl setImage:[UIImage imageNamed:@"tab_driving_select.png"] forSegmentAtIndex:0];
+            [_travelTypeSegmentControl setImage:[UIImage imageNamed:@"tab_walking_unselect.png"] forSegmentAtIndex:1];
             travelType = DRIVING;
             break;
         }
         case WALKING:
         {
+            [_travelTypeSegmentControl setImage:[UIImage imageNamed:@"tab_driving_unselect.png"] forSegmentAtIndex:0];
+            [_travelTypeSegmentControl setImage:[UIImage imageNamed:@"tab_walking_select.png"] forSegmentAtIndex:1];
             travelType = WALKING;
             break;
         }
