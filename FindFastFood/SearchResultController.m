@@ -85,7 +85,7 @@
     
     locationManager = [[CLLocationManager alloc] init];
     
-    //check [CLLocationManager locationServicesEnabled];
+    //check [CLLocationManager locationServicesEnabled]; 
     
     geocoder = [[CLGeocoder alloc] init];
     
